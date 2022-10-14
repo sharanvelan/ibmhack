@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ibmhack/page2ext.dart';
+import 'package:ibmhack/secondscext.dart';
+import 'package:ibmhack/connection.dart';
 
 class secscreen extends StatefulWidget {
   const secscreen({super.key});
@@ -18,69 +20,71 @@ class _secscreenState extends State<secscreen> {
         backgroundColor: Color(0xFF1b1b1b),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(250, 150, 0, 20),
-            child: Column(children: <Widget>[
-              Container(
-                height: 350,
-                width: 1000,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0x8AFFFFFF),
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Stack(
-                      children: <Widget>[
-                        Align(
-                            alignment: FractionalOffset.center,
-                            child: Padding(
-                                padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                                child: Image.asset(
-                                  'assets/laptop.png',
-                                  height: 270,
-                                  width: 370,
-                                ))),
-                        Align(
-                          alignment: FractionalOffset.bottomCenter,
-                          child: Padding(
-                            padding: EdgeInsets.fromLTRB(80, 0, 0, 10),
-                            child: Text(
-                              'lenovo s145 Ryzen 5',
-                              style: TextStyle(
-                                fontFamily: 'AndadaPro',
-                                fontSize: 20,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 20),
+              child: Column(
+                children: <Widget>[
+                  Row(children: <Widget>[
+                    SizedBox(
+                      width: 150,
                     ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Container(
-                  height: 300,
-                  width: 1000,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(0x8AFFFFFF),
-                  )),
-              SizedBox(
-                height: 40,
-              ),
-              Container(
-                  height: 300,
-                  width: 1000,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(0x8AFFFFFF),
-                  ))
-            ]),
-          ),
+                    TextButton(
+                        onPressed: () {},
+                        child: Text("Home",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                decoration: TextDecoration.underline))),
+                    SizedBox(
+                      width: 1000,
+                    ),
+                    Expanded(
+                      child: TextField(
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.search),
+                            prefixIconColor: Colors.white,
+                            hintText: "Search Here",
+                            hintStyle: TextStyle(color: Colors.white),
+                            fillColor: Colors.white,
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white)),
+                          )),
+                    ),
+                    SizedBox(
+                      width: 150,
+                    )
+                  ]),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  secondscreenext(
+                      'ASUS VivoBook K15 OLED Ryzen 5 Hexa Core 5500U - \n(16 GB/512 GB SSD/Windows 11 Home) KM513UA-L513WS Thi...fasdjflfafdf',
+                      '5.0',
+                      '55,000'),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  secondscreenext('Lenovo s145              ', '5.0', '55,000'),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  secondscreenext('Lenovo s145              ', '5.0', '55,000'),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  secondscreenext('Lenovo s145              ', '5.0', '55,000'),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  secondscreenext('Lenovo s145              ', '5.0', '55,000'),
+                  SizedBox(
+                    height: 30,
+                  ),
+                ],
+              )),
         ),
       ),
     );

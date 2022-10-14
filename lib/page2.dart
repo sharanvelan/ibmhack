@@ -23,13 +23,50 @@ class _secondState extends State<second> {
         //   ),
         // ),
         child: Padding(
-            padding: EdgeInsets.fromLTRB(0, 42, 0, 20),
+            padding: EdgeInsets.fromLTRB(0, 5, 10, 30),
             child: Column(
               children: <Widget>[
+                Row(children: <Widget>[
+                  SizedBox(
+                    width: 150,
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text("Home",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              decoration: TextDecoration.underline))),
+                  SizedBox(
+                    width: 1000,
+                  ),
+                  Expanded(
+                    child: TextField(
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search),
+                          prefixIconColor: Colors.white,
+                          hintText: "Search Here",
+                          hintStyle: TextStyle(color: Colors.white),
+                          fillColor: Colors.white,
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                        )),
+                  ),
+                  SizedBox(
+                    width: 150,
+                  )
+                ]),
+                SizedBox(
+                  height: 35,
+                ),
                 Row(
                   children: <Widget>[
                     const SizedBox(
-                      width: 100,
+                      width: 180,
                     ),
                     buttonContainer('assets/laptop.png', "laptop", ctxt1: ctxt),
                     const SizedBox(
@@ -46,7 +83,7 @@ class _secondState extends State<second> {
                       width: 30,
                     ),
                     buttonContainer('assets/smarttv.png', "smart tv",
-                        lt: 20, ctxt1: ctxt),
+                        lt: 30, ctxt1: ctxt),
                   ],
                 ),
                 const SizedBox(
@@ -55,7 +92,7 @@ class _secondState extends State<second> {
                 Row(
                   children: <Widget>[
                     const SizedBox(
-                      width: 100,
+                      width: 180,
                     ),
                     buttonContainer('assets/bluetooth.png', "bluetooth",
                         ctxt1: ctxt),
@@ -72,7 +109,7 @@ class _secondState extends State<second> {
                       width: 30,
                     ),
                     buttonContainer('assets/smartwatch.png', "smart watch",
-                        bot: 45, ctxt1: ctxt),
+                        bot: 60, ctxt1: ctxt),
                     SizedBox(
                       width: 100,
                     ),

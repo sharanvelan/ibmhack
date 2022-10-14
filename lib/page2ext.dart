@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ibmhack/secondscreen.dart';
+import 'package:ibmhack/connection.dart';
 
 Image imagesAssets(String str, Size size) {
   var assetImage = AssetImage(str);
   return Image(image: assetImage);
 }
+
+String name = "";
+String final_response = "";
 
 Widget buttonContainer(String img, String str,
         {double bot = 20, double lt = 0, required BuildContext ctxt1}) =>
@@ -27,7 +31,8 @@ Widget buttonContainer(String img, String str,
               Align(
                   alignment: FractionalOffset.center,
                   child: Padding(
-                      padding: EdgeInsets.all(10), child: Image.asset(img))),
+                      padding: EdgeInsets.fromLTRB(lt, 10, 15, bot),
+                      child: Image.asset(img))),
               Align(
                 alignment: FractionalOffset.bottomCenter,
                 child: Padding(
@@ -45,6 +50,8 @@ Widget buttonContainer(String img, String str,
             ],
           )),
       onTap: () {
+        final url = "http://127.0.0.1:5000/predict";
+        fetchdata(url);
         Navigator.push(
             ctxt1, new MaterialPageRoute(builder: (ctxt1) => new secscreen()));
       },
